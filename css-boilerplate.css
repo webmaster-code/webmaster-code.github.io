@@ -398,7 +398,7 @@ ed-nowrap,
 body{
     --ed-color-primary: var(--e-global-color-primary);
     --ed-color-secondary: var(--e-global-color-secondary);
-    --ed-color-accent: var(--e-global-color-accent);
+    --ed-color-accent: purple;
 }
 
  /**
