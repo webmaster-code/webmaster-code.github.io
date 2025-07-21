@@ -1,0 +1,439 @@
+/*
+ **************************
+ *
+ * CSS Boilerplate
+ *
+ * Re-useable CSS code for
+ * better development.
+ *
+ * DO NOT ADD EDITS DIRECTLY
+ * TO THE BOILERPLATE. IT MAY
+ * BE PASTED OVER. ADD YOUR
+ * EDITS AFTER THE BOILERPLATE.
+ *
+ * @Version 6/19/2025
+ * @Inserted 7/21/2025
+ *
+ **************************
+ */
+
+/*
+ **************************
+ *
+ * THE FUNDAMENTALS
+ *
+ **************************
+ */
+body{
+	/* No horizontal scrollbars! */
+	max-width: 100% !important;
+	overflow-x: hidden !important;
+}
+
+/* Hide GravityForm asterisk legend by default */
+.gform_required_legend,
+.instruction.validation_message{
+	display: none;
+}
+/* Form errors need to look uniform. */
+body .gform_wrapper .gfield_validation_message,
+body .gform_wrapper .validation_message,
+body .gform_wrapper .gform_validation_errors{
+	background: red;
+}
+body .gform_wrapper .gfield_validation_message,
+body .gform_wrapper .validation_message,
+body .gform_wrapper .gform_validation_errors h2{
+	color: white;
+}
+
+/* reCAPTCHA - reposition the v3 badge so it doesn’t cover sticky footers on mobile. */
+.grecaptcha-badge{
+	z-index: 10;
+	bottom: 50px !important;
+}
+
+
+/*
+ **************************
+ *
+ * FORMATTING
+ *
+ **************************
+ */
+
+/* Sometimes you want something inline */
+.inline,
+ed-inline,
+.ed-inline{
+	display: inline !important;
+}
+/* Wrap the city name to keep text grouped */
+/* Inline block */
+ed-city,
+.ed-city,
+ed-inline-block,
+.ed-inline-block{
+	display: inline-block;
+}
+
+/*
+ ****************************
+ * Prevent sections of text
+ * from being broken up.
+ * Useful for things such as
+ * keeping "Los Angeles" on the
+ * same line or preventing
+ * poorly formatted text from
+ * looking ugly.
+ ****************************
+ */
+.nowrap,
+ed-nowrap,
+.ed-nowrap{
+	white-space: nowrap;
+}
+
+/* Or choose your breakpoint*/
+@media (min-width: 1025px){
+	.desktop-nowrap{
+		white-space: nowrap;
+	}
+	.desktop-full-width{
+		width: 100% !important;
+	}
+}
+@media (min-width: 768px) AND (max-width: 1024px) AND (orientation: portrait){
+	.tablet-portrait-nowrap{
+		white-space: nowrap;
+	}
+	.tablet-portrait-full-width{
+		width: 100% !important;
+	}
+	/* Sort the columns */
+	.tablet-portrait-order-1{order: 1;}
+	.tablet-portrait-order-2{order: 2;}
+}
+@media (min-width: 768px) AND (max-width: 1024px) AND (orientation: landscape){
+	.tablet-landscape-nowrap{
+		white-space: nowrap;
+	}
+	.tablet-landscape-full-width{
+		width: 100% !important;
+	}
+	/* Sort the columns */
+	.tablet-landscape-order-1{order: 1;}
+	.tablet-landscape-order-2{order: 2;}
+}
+@media (max-width: 767px){
+	.mobile-nowrap{white-space: nowrap;
+	}
+	.mobile-full-width{
+		width: 100% !important;
+	}
+}
+
+
+/* Force a line break at certain sizes. Don't use *br* in titles. */
+.ed-line-break{
+	display: block;
+}
+@media (min-width: 1025px){
+.desktop-line-break{
+		display: block;
+	}
+}
+@media (min-width: 768px) AND (max-width: 1024px) AND (orientation: landscape){
+.tablet-landscape-line-break{
+		display: block;
+	}
+}
+@media (min-width: 768px) AND (max-width: 1023px) AND (orientation: portrait){
+.tablet-portrait-line-break{
+		display: block;
+	}
+}
+@media (max-width: 767px){
+.mobile-line-break{
+		display: block;
+	}
+}
+
+
+/*
+ ****************************
+ * Stretching content
+ *
+ * Classes for use with the
+ * edStretchContent script
+ *
+ * .ed-stretch-parent
+ *     .desktop
+ *     .portrait
+ *     .landscape
+ *
+ * .ed-stretch-content
+ * .ed-stretch-sidebar
+ * .ed-stretch-target
+ ****************************
+ */
+/* Strecth the content on tablet and above */
+.ed-stretch-parent .ed-stretch-sidebar,
+.ed-stretch-parent .ed-stretch-content{
+    transition: width 0.2s ease-out;
+}
+/**
+  Stretching
+  You may want content to strecth on one screen size but not others. For this reason, you must add your desired combination of .desktop, .landscape, or .portrait to the .ed-stretch-parent element.
+
+  Ex usage:
+  class = "ed-stretch-parent desktop portrait" -- this would only work on desktop and tablet portrait.
+**/
+@media (min-width: 1025px){
+    .ed-stretch-parent[data-eds-is-stretching="true"].desktop .ed-stretch-sidebar{
+        width: 0.01%;
+        overflow: hidden;
+    }
+    .ed-stretch-parent[data-eds-is-stretching="true"].desktop .ed-stretch-content{
+        width: 99.99%;
+    }
+}
+@media (min-width: 768px) AND (max-width: 1024px) AND (orientation: landscape){
+    .ed-stretch-parent[data-eds-is-stretching="true"].landscape .ed-stretch-sidebar{
+        width: 0.01%;
+        overflow: hidden;
+    }
+    .ed-stretch-parent[data-eds-is-stretching="true"].landscape .ed-stretch-content{
+        width: 99.99%;
+    }
+}
+@media (min-width: 768px) AND (max-width: 1024px) AND (orientation: portrait){
+    .ed-stretch-parent[data-eds-is-stretching="true"].portrait .ed-stretch-sidebar{
+        width: 0.01%;
+        overflow: hidden;
+    }
+    .ed-stretch-parent[data-eds-is-stretching="true"].portrait .ed-stretch-content{
+        width: 99.99%;
+    }
+}
+
+/* END FORMATTING */
+
+/*
+ **************************
+ *
+ * LINKS
+ *
+ **************************
+ */
+
+/*
+ * Prevent phone numbers
+ * from being clicked on
+ * desktop.
+ */
+@media (min-width: 1025px){
+	.phone-number,
+	[phone-number]{
+		pointer-events: none;
+		white-space: nowrap;
+	}
+}
+/* END LINKS */
+
+
+/*
+ **************************
+ *
+ * IMAGES
+ *
+ **************************
+ */
+
+/**
+ * Stretch the image to the height of the column
+ */
+.ed-stretch-img,
+.ed-stretch-img .elementor-widget-container,
+.ed-stretch-img .elementor-widget-image,
+.ed-stretch-img .elementor-widget-image > a,
+.ed-stretch-image,
+.ed-stretch-image .elementor-widget-container,
+.ed-stretch-image .elementor-widget-image,
+.ed-stretch-image .elementor-widget-image > a {
+    height: 100%;
+}
+.ed-stretch-img.elementor-element > .elementor-widget-container > img,
+.ed-stretch-image.elementor-element > .elementor-widget-container > img {
+  object-fit: cover;
+  object-position: 50% 50%;
+  height: 100%;
+}
+
+/*** Audio Player ***/
+/* What image should we display? */
+[data-player-state="is-paused"] .is-playing,
+[data-player-state="is-playing"] .is-paused{
+    display: none;
+}
+/* Full width audio images */
+.ed-audio-player img{
+    width: 100%;
+}
+.ed-audio-player img:hover{
+    cursor: pointer;
+}
+
+/* END IMAGES */
+
+
+/*
+ **************************
+ *
+ * Mouse Effects
+ *
+ **************************
+ */
+
+/* Prevent an element from being clicked */
+.noclick{
+	pointer-events: none;
+}
+@media (min-width: 1025px){
+	.desktop-noclick{
+		pointer-events: none;
+	}
+}
+@media (min-width: 768px) AND (max-width: 1024px) AND (orientation: landscape){
+	.tablet-landscape-noclick{
+		pointer-events: none;
+	}
+}
+@media (min-width: 768px) AND (max-width: 1024px) AND (orientation: portrait){
+	.tablet-portrait-noclick{
+		pointer-events: none;
+	}
+}
+@media (max-width: 767px){
+	.mobile-noclick{
+		pointer-events: none;
+	}
+}
+
+/*
+ * Disable the mouse effects
+ * on tablet & mobile because
+ * tapping on the screen will
+ * make things look
+ * misaligned.
+ */
+@media screen AND (max-width: 1024px){
+  .elementor-motion-effects-element{
+    transform: none !important;
+  }
+}
+/* END MOUSE EFFECTS */
+
+
+/*
+ **************************
+ *
+ * Text Styles
+ *
+ **************************
+ */
+
+/******** Blog *********
+ * Single post - Remove
+ * unwanted styles when
+ * copying content from
+ * Google Doc to WP Editor.
+ ***********************/
+.elementor-widget-theme-post-content p span,
+.elementor-widget-theme-post-content h1 span,
+.elementor-widget-theme-post-content h2 span,
+.elementor-widget-theme-post-content h3 span,
+.elementor-widget-theme-post-content h4 span,
+.elementor-widget-theme-post-content h5 span,
+.elementor-widget-theme-post-content h6 span,
+.elementor-widget-theme-post-content ul li,
+.elementor-widget-theme-post-content ul li span,
+.elementor-widget-theme-post-content ol li,
+.elementor-widget-theme-post-content ol li span {
+	font-weight: inherit !important;
+}
+/* END BLOG */
+/* END TEXT STYLES */
+
+
+/*
+ **************************
+ *
+ * HELPERS
+ *
+ * Little things like
+ * tool tips and text marking
+ *
+ **************************
+ */
+
+/*
+ **************************
+ *
+ * Color Vars:
+ * Make sure we have our
+ * primary, secondary,
+ * and accent colors ready
+ * for use with custom
+ * code so we don't
+ * need to search the
+ * developer console for
+ * values or hard code
+ * anything. Can be
+ * overridden if global
+ * colors are not set.
+ *
+ **************************
+ */
+body{
+    --ed-color-primary: var(--e-global-color-primary);
+    --ed-color-secondary: var(--e-global-color-secondary);
+    --ed-color-accent: var(--e-global-color-accent);
+}
+
+ /**
+ Colored text mimicking "mark". Change text to a company color instead of using inline style.
+ Ex: wrap using p-mark or as a class using .p-mark
+ */
+p-mark, .p-mark{color: var( --ed-color-primary ) !important;}
+s-mark, .s-mark{color: var( --ed-color-secondary ) !important;}
+a-mark, .a-mark{color: var( --ed-color-accent ) !important;}
+w-mark, .w-mark{color: white !important;}
+
+/** For development: add this to an element to mark it as a TODO so its will stand out and you can come back to it later.
+*/
+.alert-todo::before,
+.ed-todo::before,
+.ed-alert::before{
+    content: "\26A0TODO\26A0";
+    display: block !important;
+    text-align: center !important;
+    background: red !important;
+    color: yellow !important;
+    padding: 10px 20px;
+    font-size: 40px;
+    line-height: 1.3em;
+    margin-bottom: 5px;
+}
+
+
+/* END HELPERS */
+
+
+/*
+ **************************
+ *
+ * END OF BOILERPLATE
+ *
+ **************************
+ */
