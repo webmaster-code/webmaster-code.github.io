@@ -11,8 +11,8 @@
  * BE PASTED OVER. ADD YOUR
  * EDITS AFTER THE BOILERPLATE.
  *
- * @Version 6/19/2025
- * @Inserted 7/21/2025
+ * @Version 2/4/2026
+ * @Inserted {date}
  *
  **************************
  */
@@ -35,13 +35,13 @@ body{
 .instruction.validation_message{
 	display: none;
 }
-/* Form errors need to look uniform. */
-body .gform_wrapper .gfield_validation_message,
+/* Form errors need to look uniform. */ 
+body .gform_wrapper .gfield_validation_message, 
 body .gform_wrapper .validation_message,
 body .gform_wrapper .gform_validation_errors{
 	background: red;
 }
-body .gform_wrapper .gfield_validation_message,
+body .gform_wrapper .gfield_validation_message, 
 body .gform_wrapper .validation_message,
 body .gform_wrapper .gform_validation_errors h2{
 	color: white;
@@ -164,14 +164,14 @@ ed-nowrap,
  ****************************
  * Stretching content
  *
- * Classes for use with the
- * edStretchContent script
- *
+ * Classes for use with the 
+ * edStretchContent script 
+ * 
  * .ed-stretch-parent
  *     .desktop
  *     .portrait
  *     .landscape
- *
+ * 
  * .ed-stretch-content
  * .ed-stretch-sidebar
  * .ed-stretch-target
@@ -182,11 +182,11 @@ ed-nowrap,
 .ed-stretch-parent .ed-stretch-content{
     transition: width 0.2s ease-out;
 }
-/**
-  Stretching
+/** 
+  Stretching 
   You may want content to strecth on one screen size but not others. For this reason, you must add your desired combination of .desktop, .landscape, or .portrait to the .ed-stretch-parent element.
-
-  Ex usage:
+  
+  Ex usage: 
   class = "ed-stretch-parent desktop portrait" -- this would only work on desktop and tablet portrait.
 **/
 @media (min-width: 1025px){
@@ -219,28 +219,6 @@ ed-nowrap,
 
 /* END FORMATTING */
 
-/*
- **************************
- *
- * LINKS
- *
- **************************
- */
-
-/*
- * Prevent phone numbers
- * from being clicked on
- * desktop.
- */
-@media (min-width: 1025px){
-	.phone-number,
-	[phone-number]{
-		pointer-events: none;
-		white-space: nowrap;
-	}
-}
-/* END LINKS */
-
 
 /*
  **************************
@@ -253,13 +231,13 @@ ed-nowrap,
 /**
  * Stretch the image to the height of the column
  */
-.ed-stretch-img,
-.ed-stretch-img .elementor-widget-container,
-.ed-stretch-img .elementor-widget-image,
+.ed-stretch-img, 
+.ed-stretch-img .elementor-widget-container, 
+.ed-stretch-img .elementor-widget-image, 
 .ed-stretch-img .elementor-widget-image > a,
-.ed-stretch-image,
-.ed-stretch-image .elementor-widget-container,
-.ed-stretch-image .elementor-widget-image,
+.ed-stretch-image, 
+.ed-stretch-image .elementor-widget-container, 
+.ed-stretch-image .elementor-widget-image, 
 .ed-stretch-image .elementor-widget-image > a {
     height: 100%;
 }
@@ -302,22 +280,22 @@ ed-nowrap,
 @media (min-width: 1025px){
 	.desktop-noclick{
 		pointer-events: none;
-	}
+	} 
 }
 @media (min-width: 768px) AND (max-width: 1024px) AND (orientation: landscape){
 	.tablet-landscape-noclick{
 		pointer-events: none;
-	}
+	} 
 }
 @media (min-width: 768px) AND (max-width: 1024px) AND (orientation: portrait){
 	.tablet-portrait-noclick{
 		pointer-events: none;
-	}
+	} 
 }
 @media (max-width: 767px){
 	.mobile-noclick{
 		pointer-events: none;
-	}
+	} 
 }
 
 /*
@@ -371,26 +349,26 @@ ed-nowrap,
  *
  * HELPERS
  *
- * Little things like
+ * Little things like 
  * tool tips and text marking
- *
+ * 
  **************************
  */
 
 /*
  **************************
  *
- * Color Vars:
+ * Color Vars: 
  * Make sure we have our
- * primary, secondary,
+ * primary, secondary, 
  * and accent colors ready
- * for use with custom
- * code so we don't
- * need to search the
- * developer console for
- * values or hard code
- * anything. Can be
- * overridden if global
+ * for use with custom 
+ * code so we don't 
+ * need to search the 
+ * developer console for 
+ * values or hard code 
+ * anything. Can be 
+ * overridden if global 
  * colors are not set.
  *
  **************************
@@ -401,8 +379,8 @@ body{
     --ed-color-accent: var(--e-global-color-accent);
 }
 
- /**
- Colored text mimicking "mark". Change text to a company color instead of using inline style.
+ /** 
+ Colored text mimicking "mark". Change text to a company color instead of using inline style. 
  Ex: wrap using p-mark or as a class using .p-mark
  */
 p-mark, .p-mark{color: var( --ed-color-primary ) !important;}
